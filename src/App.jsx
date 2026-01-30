@@ -10,7 +10,8 @@ const App = () => {
 
     const response = await axios.get('https://jsonplaceholder.typicode.com/users')
     
-    setallData(response.data)    
+    setallData(response.data)
+    console.log(response.data);    
   }
 useEffect(()=>{
   getData()
