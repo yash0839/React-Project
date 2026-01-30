@@ -18,7 +18,7 @@ useEffect(()=>{
 
   return (
     <div>
-        {/* <button onClick={getData}>get data</button> */}
+
 
      <div className='all-cards'>
         {allData.map(function (elem, idx){
