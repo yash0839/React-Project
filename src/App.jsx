@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 // import { useState } from 'react'
 // import "./app.scss"
 // import Dock from './components/Dock'
@@ -104,3 +105,42 @@ function App() {
 }
 
 export default App;
+=======
+import React,{useEffect, useState} from 'react'
+import axios from 'axios'
+import User from './User'
+
+
+const App = () => {
+ const [allData, setallData] = useState([])
+
+  const getData = async()=>{
+
+    const response = await axios.get('https://jsonplaceholder.typicode.com/users')
+    
+    setallData(response.data)
+    console.log(response.data);    
+  }
+useEffect(()=>{
+  getData()
+},[])
+
+  return (
+    <div>
+
+
+     <div className='all-cards'>
+        {allData.map(function (elem, idx){
+
+          console.log(elem);
+          return <div  key={idx} >
+            <User data={elem} />
+          </div>
+        })}
+     </div>
+    </div>
+  )
+}
+
+export default App
+>>>>>>> 816aacfc4c7bf4a8fbac90e49ffa89bd2bd493eb
